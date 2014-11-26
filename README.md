@@ -32,7 +32,16 @@ The following demonstrates the minimum config for the CloudWatch backend.
         {
             accessKeyId: 'YOUR_ACCESS_KEY_ID', 
             secretAccessKey:'YOUR_SECRET_ACCESS_KEY', 
-            region:"YOUR_REGION"
+            region:"YOUR_REGION",
+            dimensions: [
+        	{
+        		Name: "dim1",
+        		Value: "dimvalue1",
+        	},
+        	{
+        		Name: "dim2",
+        		Value: "dimvalue2"
+        	}]
         }
     }
 
@@ -67,6 +76,15 @@ The following overrides the default and any provided namespace or metric name wi
             accessKeyId: 'YOUR_ACCESS_KEY_ID', 
             secretAccessKey: 'YOUR_SECRET_ACCESS_KEY', 
             region: 'YOUR_REGION',
+            dimensions: [
+        	{
+        		Name: "dim1",
+        		Value: "dimvalue1",
+        	},
+        	{
+        		Name: "dim2",
+        		Value: "dimvalue2"
+        	}],
             namespace: 'App/Controller/Action', 
             metricName: 'Request'
         }
@@ -81,6 +99,15 @@ Using the option *processKeyForNamespace* (default is false) you can parse the b
             accessKeyId: 'YOUR_ACCESS_KEY_ID', 
             secretAccessKey: 'YOUR_SECRET_ACCESS_KEY', 
             region: 'YOUR_REGION',
+            dimensions: [
+        	{
+        		Name: "dim1",
+        		Value: "dimvalue1",
+        	},
+        	{
+        		Name: "dim2",
+        		Value: "dimvalue2"
+        	}],
             processKeyForNames:true
         }
     }
@@ -102,6 +129,15 @@ Using cloudwatch will incur a cost for each metric sent. In order to control you
             accessKeyId: 'YOUR_ACCESS_KEY_ID', 
             secretAccessKey: 'YOUR_SECRET_ACCESS_KEY', 
             region: 'YOUR_REGION',
+            dimensions: [
+        	{
+        		Name: "dim1",
+        		Value: "dimvalue1",
+        	},
+        	{
+        		Name: "dim2",
+        		Value: "dimvalue2"
+        	}],
             whitelist: ['YOUR_FULL_METRIC_NAME']
         }
     }
